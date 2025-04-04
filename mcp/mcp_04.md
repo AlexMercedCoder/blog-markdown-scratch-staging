@@ -1,4 +1,4 @@
-# A Journey from AI to LLMs and MCP - 4 - 
+# A Journey from AI to LLMs and MCP - 4 - What Are AI Agents — And Why They're the Future of LLM Applications
 
 ## Free Resources  
 - **[Free Apache Iceberg Course](https://hello.dremio.com/webcast-an-apache-iceberg-lakehouse-crash-course-reg.html?utm_source=ev_external_blog&utm_medium=influencer&utm_campaign=AItoLLMS&utm_content=alexmerced&utm_term=external_blog)**  
@@ -7,8 +7,6 @@
 - **[How to Join the Iceberg Community](https://medium.alexmerced.blog/guide-to-finding-apache-iceberg-events-near-you-and-being-part-of-the-greater-iceberg-community-0c38ae785ddb)**  
 - **[Iceberg Lakehouse Engineering Video Playlist](https://youtube.com/playlist?list=PLsLAVBjQJO0p0Yq1fLkoHvt2lEJj5pcYe&si=WTSnqjXZv6Glkc3y)**  
 - **[Ultimate Apache Iceberg Resource Guide](https://medium.com/data-engineering-with-dremio/ultimate-directory-of-apache-iceberg-resources-e3e02efac62e)** 
-
-# What Are AI Agents — And Why They're the Future of LLM Applications
 
 We’ve explored how Large Language Models (LLMs) work, and how we can improve their performance with fine-tuning, prompt engineering, and retrieval-augmented generation (RAG). These enhancements are powerful—but they’re still fundamentally *stateless* and reactive.
 
@@ -23,9 +21,7 @@ In this post, we’ll explore:
 - Real-world examples of agent use
 - Why agents are a crucial next step for AI
 
----
-
-## 🤖 What Is an AI Agent?
+## What Is an AI Agent?
 
 At a high level, an **AI agent** is an autonomous or semi-autonomous system built around an LLM, capable of:
 - Observing its environment (inputs, tools, data)
@@ -37,9 +33,7 @@ LLMs generate responses, but **agents make decisions**. They don’t just answer
 
 > Think of the difference between a calculator and a virtual assistant. One gives answers. The other *gets things done*.
 
----
-
-## 🧱 The Core Ingredients of an AI Agent
+## The Core Ingredients of an AI Agent
 
 Let’s break down what typically makes up an agentic system:
 
@@ -61,9 +55,7 @@ This is where agents shine. They can:
 ### 5. **Context Manager**
 Decides what information (memory, documents, tool results) gets included in each LLM prompt.
 
----
-
-## 🧠 LLM vs AI Agent — Key Differences
+## LLM vs AI Agent — Key Differences
 
 | Capability         | LLM                  | AI Agent                          |
 |--------------------|----------------------|------------------------------------|
@@ -76,34 +68,30 @@ Decides what information (memory, documents, tool results) gets included in each
 
 LLMs are the engine. Agents are the vehicle.
 
----
-
-## 🧪 Examples of AI Agents in the Wild
+## Examples of AI Agents in the Wild
 
 Let’s explore how AI agents are already showing up in real-world applications:
 
-### 🔧 1. **Developer Copilots**
+### 1. **Developer Copilots**
 Tools like GitHub Copilot or Cursor act as coding assistants, not just autocomplete engines. They:
 - Read your project files
 - Ask clarifying questions
 - Suggest multi-line changes
 - Run code against test cases
 
-### 📄 2. **Document Q&A Assistants**
+### 2. **Document Q&A Assistants**
 Instead of just answering questions, agents:
 - Search relevant documents
 - Summarize findings
 - Ask follow-up questions
 - Offer next actions (e.g., generate reports)
 
-### 🕵️ 3. **Research Agents**
+### 3. **Research Agents**
 Given a broad prompt like *“summarize recent news on AI regulation,”* agents:
 - Plan a research strategy
 - Browse the web or internal data
 - Synthesize and refine results
 - Ask for confirmation before continuing
-
----
 
 ## 🔄 Agents Enable Autonomy and Feedback Loops
 
@@ -113,30 +101,26 @@ Unlike plain LLMs, agents can:
 - **Store and recall** what they’ve seen
 - Chain multiple steps together
 
-For example:
-Task: Schedule a meeting with Alice
+### For example:
 
-Agent:
+**Task:** Schedule a meeting with Alice
 
-Search calendar availability
+**Agent:**
 
-Find Alice’s preferred times
+- Search calendar availability
 
-Draft an email proposal
+- Find Alice’s preferred times
 
-Wait for response
+- Draft an email proposal
 
-Reschedule if needed
+- Wait for response
 
-yaml
-Copy
-Edit
+- Reschedule if needed
 
 That’s not a single LLM prompt—that’s an intelligent system managing an evolving task.
 
----
 
-## 🧱 How Are Agents Built Today?
+## How Are Agents Built Today?
 
 A number of popular **AI agent frameworks** have emerged:
 
@@ -149,9 +133,7 @@ These frameworks let developers prototype powerful workflows, but they come with
 
 We’ll explore those challenges in the next post.
 
----
-
-## 🚧 Limitations of Today’s Agent Implementations
+## Limitations of Today’s Agent Implementations
 
 While agents are promising, current frameworks have some limitations:
 - **Tight coupling** to specific models or tools
@@ -164,9 +146,8 @@ To address these, we need **standardization**—a modular way to plug in data, t
 
 That’s where the **Model Context Protocol (MCP)** enters the picture.
 
----
 
-## 🔮 Coming Up Next: AI Agent Frameworks — Benefits and Limitations
+## Coming Up Next: AI Agent Frameworks — Benefits and Limitations
 
 In our next post, we’ll explore:
 - How modern agent frameworks work

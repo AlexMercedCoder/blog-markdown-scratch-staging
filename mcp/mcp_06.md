@@ -1,4 +1,4 @@
-# A Journey from AI to LLMs and MCP - 6 - 
+# A Journey from AI to LLMs and MCP - 6 - Enter the Model Context Protocol (MCP) — The Interoperability Layer for AI Agents
 
 ## Free Resources  
 - **[Free Apache Iceberg Course](https://hello.dremio.com/webcast-an-apache-iceberg-lakehouse-crash-course-reg.html?utm_source=ev_external_blog&utm_medium=influencer&utm_campaign=AItoLLMS&utm_content=alexmerced&utm_term=external_blog)**  
@@ -7,8 +7,6 @@
 - **[How to Join the Iceberg Community](https://medium.alexmerced.blog/guide-to-finding-apache-iceberg-events-near-you-and-being-part-of-the-greater-iceberg-community-0c38ae785ddb)**  
 - **[Iceberg Lakehouse Engineering Video Playlist](https://youtube.com/playlist?list=PLsLAVBjQJO0p0Yq1fLkoHvt2lEJj5pcYe&si=WTSnqjXZv6Glkc3y)**  
 - **[Ultimate Apache Iceberg Resource Guide](https://medium.com/data-engineering-with-dremio/ultimate-directory-of-apache-iceberg-resources-e3e02efac62e)** 
-
-# Enter the Model Context Protocol (MCP) — The Interoperability Layer for AI Agents
 
 We’ve spent the last few posts exploring the growing power of AI agents—how they can reason, plan, and take actions across complex tasks. And we’ve looked at the frameworks that help us build these agents. But if you’ve worked with them, you’ve likely hit a wall:
 
@@ -24,9 +22,7 @@ That’s exactly what the **Model Context Protocol (MCP)** brings to the table.
 And if you’re from the data engineering world, MCP is to AI agents what the **Apache Iceberg REST protocol** is to analytics:  
 > A universal, pluggable interface that enables many clients to interact with many servers—without tight coupling.
 
----
-
-## 🧩 What Is the Model Context Protocol (MCP)?
+## What Is the Model Context Protocol (MCP)?
 
 MCP is an **open protocol** that defines how LLM-powered applications (like agents, IDEs, or copilots) can access **context, tools, and actions** in a standardized way.
 
@@ -43,8 +39,6 @@ It defines a **common language** for exchanging:
 
 This allows you to **plug in new capabilities without rearchitecting your agent or retraining your model**.
 
----
-
 ## 🧱 How MCP Mirrors Apache Iceberg’s REST Protocol
 
 Let’s draw the parallel:
@@ -54,12 +48,10 @@ Let’s draw the parallel:
 | Standardized API       | REST endpoints for table ops        | JSON-RPC messages for context/tools       |
 | Decouples client/server| Any engine ↔ any Iceberg catalog    | Any LLM/agent ↔ any tool or data backend  |
 | Multi-client support   | Spark, Trino, Flink, Dremio         | Claude, custom agents, IDEs, terminals    |
-| Pluggable backends     | S3, HDFS, Snowflake, GCS            | Filesystem, APIs, databases, web services |
+| Pluggable backends     | S3, HDFS, Minio, Pure Storage, GCS            | Filesystem, APIs, databases, web services |
 | Interoperable tooling  | REST = portable across ecosystems   | MCP = portable across LLM environments    |
 
-Just as Iceberg REST made it possible for **Trino** to talk to a table created in **Snowflake**, MCP allows a tool exposed in **Python on your laptop** to be used by an LLM in **Claude Desktop**, a VS Code agent, or even a web-based chatbot.
-
----
+Just as Iceberg REST made it possible for **Dremio** to talk to a table created in **Snowflake**, MCP allows a tool exposed in **Python on your laptop** to be used by an LLM in **Claude Desktop**, a VS Code agent, or even a web-based chatbot.
 
 ## 🔁 MCP in Action — A Real-World Use Case
 
@@ -76,9 +68,7 @@ With MCP:
 
 And tomorrow, you could replace that assistant with a different model or switch to a browser-based environment—and everything would still work.
 
----
-
-## 🧬 The Core Components of MCP
+## The Core Components of MCP
 
 Let’s break down the architecture:
 
@@ -97,9 +87,7 @@ Programs that expose capabilities like:
 
 Servers can live anywhere: locally on your machine, behind an API, or running in a cloud environment.
 
----
-
-## 🌐 What Can MCP Servers Do?
+## What Can MCP Servers Do?
 
 - **Expose local or remote files** (logs, documents, screenshots, live data)
 - **Define tools** for executing business logic, running commands, or calling APIs
@@ -108,9 +96,7 @@ Servers can live anywhere: locally on your machine, behind an API, or running in
 
 > And all of this is done in a protocol-agnostic, secure, pluggable format.
 
----
-
-## 🧠 Why This Matters
+## Why This Matters
 
 With MCP, we finally get **interoperability in the AI stack**—a shared interface layer between:
 - LLMs and tools
@@ -126,16 +112,10 @@ It gives us:
 
 In short, MCP helps you go from **monolithic, tangled agents** to **modular, composable AI systems**.
 
----
-
-## 🧭 What’s Next: Diving Deeper into MCP Internals
+## What’s Next: Diving Deeper into MCP Internals
 
 In the next few posts, we’ll dig into each part of MCP:
 - Message formats and lifecycle
 - How resources and tools are structured
 - Sampling, prompts, and real-time feedback loops
 - Best practices for building your own MCP server
-
----
-
-*If Apache Iceberg REST unlocked multi-engine access to tabular data, MCP unlocks multi-agent access to tools, context, and workflows. It’s the standard we’ve been waiting for—and now it’s here.*

@@ -22,29 +22,36 @@ In this post, we’ll break down:
 
 By the end, you’ll understand **how MCP enables secure, modular communication between LLMs and the systems they need to work with.**
 
----
-
-## 🧱 Big Picture: How MCP Fits Together
+## Big Picture: How MCP Fits Together
 
 MCP follows a **client-server architecture** that enables many-to-many connections between models and systems.
 
 Here’s the high-level setup:
 
-+-----------------------+ +--------------------+ | Claude Desktop | | Web IDE | | (Host + MCP Client) | | (Host + MCP Client)| +-----------------------+ +--------------------+ | | | MCP Protocol | v v +------------------------+ +---------------------------+ | Local Tool Server | | Cloud API Server | | (Exposes tools/resources)| | (Exposes prompts/tools) | +------------------------+ +---------------------------+
+```
++------------------------+      +--------------------+
+|    Claude Desktop      |      |      Web IDE       |
+| (Host + MCP Client)    |      | (Host + MCP Client)|
++------------------------+      +--------------------+
+             |                         |
+             |     MCP Protocol        |
+             |                         |
+             v                         v
++------------------------+    +---------------------------+
+|   Local Tool Server    |    |     Cloud API Server      |
+| (Exposes tools/resources)|  | (Exposes prompts/tools)   |
++------------------------+    +---------------------------+
 
-yaml
-Copy
-Edit
+```
 
 Each **host** runs one or more **clients**, which connect to independent **MCP servers** exposing functionality in a standardized format.
 
----
 
-## 🧠 Key Concepts
+## Key Concepts
 
 Let’s look at the core components that make this work.
 
-### 🖥️ 1. Hosts
+### 1. Hosts
 Hosts are the applications that run the LLM (e.g. Claude Desktop, VS Code extension, custom browser app). They manage:
 - The model interaction (LLM prompts and completions)
 - UI and user input
@@ -52,9 +59,7 @@ Hosts are the applications that run the LLM (e.g. Claude Desktop, VS Code extens
 
 > A host might display tools in a sidebar, allow users to pick files (resources), or visualize prompts in a command palette.
 
----
-
-### 🔌 2. Clients
+### 2. Clients
 An **MCP client** lives inside a host and connects to a single MCP server. It handles:
 - Transport layer setup (e.g. stdio or HTTP/SSE)
 - Message exchange (requests, notifications, etc.)
@@ -62,9 +67,7 @@ An **MCP client** lives inside a host and connects to a single MCP server. It ha
 
 Each client maintains a **1:1 connection with one server**.
 
----
-
-### 🖧 3. Servers
+### 3. Servers
 Servers expose real-world capabilities using the MCP spec. They can:
 - Serve **resources** (files, logs, database records)
 - Define and execute **tools**
@@ -73,13 +76,11 @@ Servers expose real-world capabilities using the MCP spec. They can:
 
 Servers can run locally (e.g. on your machine) or remotely (e.g. in a cloud API gateway), and can be implemented in any language (Python, TypeScript, C#, etc.).
 
----
-
-## 🔁 Message Lifecycle in MCP
+## Message Lifecycle in MCP
 
 MCP uses a **JSON-RPC 2.0 message format** to communicate between clients and servers. All communication flows through a structured lifecycle:
 
-### 🔄 1. Initialization
+### 1. Initialization
 Before communication starts:
 - Client sends an `initialize` request
 - Server responds with capabilities
@@ -87,9 +88,7 @@ Before communication starts:
 
 > This sets up feature negotiation and version compatibility.
 
----
-
-### ✉️ 2. Message Types
+### 2. Message Types
 
 | Type         | Description                                 |
 |--------------|---------------------------------------------|
@@ -100,31 +99,27 @@ Before communication starts:
 
 Each message is wrapped in a **transport layer** (more on that next).
 
----
-
-## 🚛 Transport Layer — How Messages Move
+## Transport Layer — How Messages Move
 
 MCP supports multiple transport mechanisms:
 
-### 🔁 Stdio Transport
+### Stdio Transport
 - Uses standard input/output
 - Ideal for local tools and scripts
 - Simple, reliable, and works well with command-line tools
 
-### 🌐 HTTP + SSE Transport
+### HTTP + SSE Transport
 - Uses HTTP POST for client-to-server messages
 - Uses **Server-Sent Events (SSE)** for real-time server-to-client updates
 - Useful for remote or cloud-based servers
 
 All transports carry JSON-RPC messages and follow the same protocol semantics.
 
----
-
-## 🧩 MCP Capabilities
+## MCP Capabilities
 
 MCP defines a small number of **core capabilities**, each with its own request/response patterns.
 
-### 📂 Resources
+### Resources
 Servers can expose structured data like:
 - Files
 - Logs
@@ -136,9 +131,7 @@ Clients can:
 - Read their contents
 - Subscribe to updates (e.g. file changes)
 
----
-
-### 🛠️ Tools
+### Tools
 Servers define **callable functions** that agents can invoke. Each tool has:
 - A name
 - Description
@@ -147,9 +140,7 @@ Servers define **callable functions** that agents can invoke. Each tool has:
 
 Tools are **model-controlled**, meaning the LLM can decide which tool to use based on context.
 
----
-
-### 🧠 Prompts
+### Prompts
 Servers can expose **reusable prompt templates** with:
 - Named arguments
 - Context bindings (e.g. resources)
@@ -157,9 +148,7 @@ Servers can expose **reusable prompt templates** with:
 
 Prompts are **user-controlled**, meaning users select when to run them.
 
----
-
-### 🎲 Sampling
+### Sampling
 Servers can **ask** the host model for completions:
 - Specify conversation history and preferences
 - Include system prompt and context
@@ -167,9 +156,7 @@ Servers can **ask** the host model for completions:
 
 This allows **server-side workflows** to request natural language responses from the model in real time.
 
----
-
-## 🔒 Security and Isolation
+## Security and Isolation
 
 MCP provides strong boundaries between components:
 - Hosts control what clients and models can see
@@ -179,16 +166,12 @@ MCP provides strong boundaries between components:
 
 > This makes MCP suitable for sensitive environments like IDEs, enterprise apps, and privacy-conscious tools.
 
----
-
-## 🧭 Why This Architecture Matters
+## Why This Architecture Matters
 
 By standardizing communication between LLMs and tools:
 - You can plug a new tool into your environment without modifying your agent
 - You can build servers once and use them across different LLM clients (Claude, custom, etc.)
 - You get **clear separation of concerns**: tools, data, and models are independently managed
-
----
 
 ## 🔮 Coming Up Next: Resources in MCP — Serving Relevant Data Securely
 
@@ -196,7 +179,3 @@ In the next post, we’ll zoom in on the **Resources** capability:
 - How to structure resources
 - How models use them
 - Real-world use cases: logs, code, documents, screenshots
-
----
-
-*With a clean separation of concerns and a universal message protocol, MCP brings the same kind of modularity to AI agents that microservices brought to backend development. And we’re just getting started.*
