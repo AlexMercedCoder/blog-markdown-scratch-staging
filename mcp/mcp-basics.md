@@ -8,8 +8,6 @@
 - **[Iceberg Lakehouse Engineering Video Playlist](https://youtube.com/playlist?list=PLsLAVBjQJO0p0Yq1fLkoHvt2lEJj5pcYe&si=WTSnqjXZv6Glkc3y)**  
 - **[Ultimate Apache Iceberg Resource Guide](https://medium.com/data-engineering-with-dremio/ultimate-directory-of-apache-iceberg-resources-e3e02efac62e)**  
 
-## Introduction
-
 If you’ve ever wished you could ask an AI model like Claude to interact with your local files or run custom code—good news: **you can.** That’s exactly what the **Model Context Protocol (MCP)** makes possible.
 
 In this tutorial, we’ll walk you through building a beginner-friendly **MCP server** that acts as a simple template for future projects. You don’t need to be an expert in AI or server development—we’ll explain each part as we go.
