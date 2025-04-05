@@ -1,4 +1,4 @@
-# A Journey from AI to LLMs and MCP - 10 - 
+# A Journey from AI to LLMs and MCP - 10 - Sampling and Prompts in MCP — Making Agent Workflows Smarter and Safer
 
 ## Free Resources  
 - **[Free Apache Iceberg Course](https://hello.dremio.com/webcast-an-apache-iceberg-lakehouse-crash-course-reg.html?utm_source=ev_external_blog&utm_medium=influencer&utm_campaign=AItoLLMS&utm_content=alexmerced&utm_term=external_blog)**  
@@ -7,8 +7,6 @@
 - **[How to Join the Iceberg Community](https://medium.alexmerced.blog/guide-to-finding-apache-iceberg-events-near-you-and-being-part-of-the-greater-iceberg-community-0c38ae785ddb)**  
 - **[Iceberg Lakehouse Engineering Video Playlist](https://youtube.com/playlist?list=PLsLAVBjQJO0p0Yq1fLkoHvt2lEJj5pcYe&si=WTSnqjXZv6Glkc3y)**  
 - **[Ultimate Apache Iceberg Resource Guide](https://medium.com/data-engineering-with-dremio/ultimate-directory-of-apache-iceberg-resources-e3e02efac62e)** 
-
-# Sampling and Prompts in MCP — Making Agent Workflows Smarter and Safer
 
 We’ve now seen how the **Model Context Protocol (MCP)** allows LLMs to read resources and call tools—giving them access to both data and action.
 

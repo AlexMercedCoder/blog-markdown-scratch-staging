@@ -104,6 +104,7 @@ User → Query → Vector Search (Embeddings) → Top K Documents → LLM Prompt
 - LLMs that read log files, support tickets, or PDFs
 
 ### Trade-offs:
+
 | Pros                                  | Cons                                  |
 |---------------------------------------|---------------------------------------|
 | Real-time access to changing data     | Adds latency due to search layer      |
