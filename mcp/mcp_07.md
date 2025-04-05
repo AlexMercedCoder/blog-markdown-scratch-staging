@@ -1,4 +1,4 @@
-# A Journey from AI to LLMs and MCP - 7 - 
+# A Journey from AI to LLMs and MCP - 7 - Under the Hood — The Architecture of MCP and Its Core Components
 
 ## Free Resources  
 - **[Free Apache Iceberg Course](https://hello.dremio.com/webcast-an-apache-iceberg-lakehouse-crash-course-reg.html?utm_source=ev_external_blog&utm_medium=influencer&utm_campaign=AItoLLMS&utm_content=alexmerced&utm_term=external_blog)**  
@@ -7,8 +7,6 @@
 - **[How to Join the Iceberg Community](https://medium.alexmerced.blog/guide-to-finding-apache-iceberg-events-near-you-and-being-part-of-the-greater-iceberg-community-0c38ae785ddb)**  
 - **[Iceberg Lakehouse Engineering Video Playlist](https://youtube.com/playlist?list=PLsLAVBjQJO0p0Yq1fLkoHvt2lEJj5pcYe&si=WTSnqjXZv6Glkc3y)**  
 - **[Ultimate Apache Iceberg Resource Guide](https://medium.com/data-engineering-with-dremio/ultimate-directory-of-apache-iceberg-resources-e3e02efac62e)** 
-
-# Under the Hood — The Architecture of MCP and Its Core Components
 
 In our last post, we introduced the **Model Context Protocol (MCP)** as a standard way to connect AI models and agents to tools, data, and workflows—much like how the Apache Iceberg REST protocol brings interoperability to data engines.
 
